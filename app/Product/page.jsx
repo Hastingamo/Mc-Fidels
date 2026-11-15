@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
 
 function page() {
   return (
-    <div>product page</div>
-  )
+    <div>
+      {" "}
+      <h1>product page</h1>
+      <div>
+        printer 
+      </div>
+    </div>
+  );
 }
 
-export default page
+export default page;
