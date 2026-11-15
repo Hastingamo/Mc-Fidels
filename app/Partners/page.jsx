@@ -6,13 +6,13 @@ export const metadata = {
 
 // Add or edit partners here.
 const partners = [
-  { name: "Evolis", location: "France", since: 2012, url: "https://www.evolis.com/" },
-  { name: "Seaory Card", location: "", since: 2020, url: "https://www.seaory.com/" },
+  { name: "Evolis", location: "France", since: 2012},
+  { name: "Seaory Card", location: "", since: 2020  },
 ];
 
 export default function PartnersPage() {
   return (
-    <main className="bg-white text-[#10151C]">
+    <main className="bg-white text-[#10151C] md:p-2">
       <header className="bg-[#F2F4F5]">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
           <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl">Our partners</h1>
@@ -36,16 +36,7 @@ export default function PartnersPage() {
                 {p.location && <p className="mt-1 text-[#4A5A66]">{p.location}</p>}
                 <p className="mt-6 text-sm text-[#4A5A66]">Partners since</p>
                 <p className="text-lg font-semibold">{p.since}</p>
-                {p.url && (
-                  <a
-                    href={p.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-6 inline-block font-medium underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#10151C]"
-                  >
-                    Visit {p.name} website
-                  </a>
-                )}
+        
               </div>
             </li>
           ))}

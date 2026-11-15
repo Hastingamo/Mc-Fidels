@@ -64,7 +64,7 @@ const reasons = [
 function IdCard() {
   return (
     <div
-      className="mx-auto w-full max-w-sm rotate-2 overflow-hidden rounded-2xl border border-[#D9DEE1] bg-white shadow-xl"
+      className="md:p-2 mx-auto w-full max-w-sm rotate-2 overflow-hidden rounded-2xl border border-[#D9DEE1] bg-white shadow-xl"
       aria-hidden="true"
     >
       <div className="flex items-center justify-between bg-[#FFC400] px-5 py-3">

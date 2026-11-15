@@ -10,7 +10,7 @@ const EMAIL = "mosesfidel@yahoo.com";
 
 export default function ContactPage() {
   return (
-    <main className="bg-white text-[#10151C]">
+    <main className="bg-white text-[#10151C] md:p-2">
       <header className="bg-[#F2F4F5]">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
           <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl">Contact us</h1>
