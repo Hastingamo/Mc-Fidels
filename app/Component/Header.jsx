@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
@@ -9,6 +10,8 @@ const links = [
   { href: "/Product", label: "Product" },
   { href: "/Partners", label: "Partners" },
   { href: "/Contact", label: "Contact" },
+  { href: "/They", label: "services"},
+  { href: "/New", label: "New"},
 ];
 
 function Header() {
@@ -39,7 +42,14 @@ function Header() {
             aria-hidden="true"
             className="flex h-8 w-11 items-start justify-start overflow-hidden rounded-md bg-[#161616] ring-1 ring-[#FFC400]"
           >
-            <span className="h-2 w-full bg-[#FFC400]" />
+                <Image
+            src="/Images/mcfidel-logo.png"
+            alt="Mcfidel ID/Safety Technocrats Ltd logo"
+            width={30}
+            height={20}
+            priority
+            className="mx-auto h-auto w-full max-w-md rounded-2xl border border-[#2A2A2A] shadow-2xl shadow-black"
+          />
           </span>
           <span className="text-lg font-bold tracking-tight text-white">Mc-Fidel</span>
         </Link>

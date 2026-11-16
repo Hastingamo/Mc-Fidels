@@ -1,3 +1,4 @@
+import Image from "next/image";
 
 export const metadata = {
   title: "About | Mc-Fidel ID & Safety Technocrats Limited",
@@ -6,7 +7,7 @@ export const metadata = {
 };
 
 const services = [
-  "ID card printers and card printing systems",
+  "ID card printers , card printing and line yard ",
   "Identification cards and related accessories",
   "Security and safety devices",
   "Specialised technological equipment",
@@ -67,26 +68,38 @@ function IdCard() {
       className="md:p-2 mx-auto w-full max-w-sm rotate-2 overflow-hidden rounded-2xl border border-[#D9DEE1] bg-white shadow-xl"
       aria-hidden="true"
     >
-      <div className="flex items-center justify-between bg-[#FFC400] px-5 py-3">
-        <span className="text-sm font-bold text-[#10151C]">Mc-Fidel ID & Safety</span>
-        <span className="h-3 w-10 rounded-full bg-[#10151C]/80" />
+  <div className="flex items-center justify-between gap-3 bg-[#FFC400] px-5 py-3">
+        <span className="text-sm font-bold leading-tight text-black">
+          Mc-Fidel ID & Safety Technocrats Limited
+        </span>
+        <span aria-hidden="true" className="h-3 w-10 shrink-0 rounded-full bg-black/80" />
       </div>
+
       <div className="flex gap-4 p-5">
-        <div className="flex h-28 w-24 shrink-0 items-end justify-center overflow-hidden rounded-md bg-[#E6EAED]">
-          <div className="mb-0 h-16 w-16 translate-y-5 rounded-full bg-[#B8C2C9]" />
+        {/* The photo fills this frame; object-top keeps the face in view */}
+        <div className="relative h-28 w-24 shrink-0 overflow-hidden rounded-md bg-[#2A2A2A]">
+          <Image
+            src="/Images/personal.jpg"
+            alt="Moses Hasting"
+            fill
+            sizes="96px"
+            priority
+            className="object-cover object-top"
+          />
         </div>
-        <div className="flex flex-1 flex-col justify-center gap-2">
-          <div className="h-3 w-3/4 rounded bg-[#10151C]" />
-          <div className="h-3 w-1/2 rounded bg-[#B8C2C9]" />
-          <div className="h-3 w-2/3 rounded bg-[#B8C2C9]" />
+
+        <div className="flex flex-1 flex-col justify-center gap-1">
+          <p className="text-lg font-bold leading-tight text-white">Moses Hasting</p>
+          <p className="text-sm text-[#A3A3A3]">Software Developer</p>
+          <p className="text-sm text-[#A3A3A3]">Mc-Fidel</p>
         </div>
       </div>
-      <div className="flex items-center justify-between border-t border-[#D9DEE1] bg-[#F2F4F5] px-5 py-3 text-xs text-[#4A5A66]">
+
+      <div className="flex items-center justify-between border-t border-[#2A2A2A] bg-[#0A0A0A] px-5 py-3 text-xs text-[#A3A3A3]">
         <span>RC 837049</span>
         <span>Incorporated 2009</span>
       </div>
-    </div>
-  );
+    </div>  );
 }
 
 function Section({ title, intro, children }) {

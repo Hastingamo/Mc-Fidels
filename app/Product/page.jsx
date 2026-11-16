@@ -85,16 +85,27 @@ export default function ProductPage() {
             ID card printers, card dispensers and printer ribbons for businesses, schools and
             institutions. Contact us for prices and availability.
           </p>
-          <a
-            href="#ribbons"
-            className={`mt-8 inline-block rounded-md border border-[#FFC400] px-5 py-3 font-semibold text-[#FFC400] hover:bg-[#0A0A0A] ${focusRing}`}
-          >
-            Jump to ribbons
-          </a>
         </div>
       </header>
 
-      <section className="mx-auto max-w-6xl px-6 py-14 md:py-20">
+      <nav aria-label="Product categories" className="border-b border-[#2A2A2A]">
+        <div className="mx-auto flex max-w-6xl flex-wrap gap-3 px-6 py-5">
+          <a
+            href="#printers"
+            className={`rounded-full border border-[#FFC400] px-5 py-2 font-semibold text-[#FFC400] hover:bg-[#FFC400] hover:text-black ${focusRing}`}
+          >
+            Printers and dispensers ({products.length})
+          </a>
+          <a
+            href="#ribbons"
+            className={`rounded-full border border-[#FFC400] px-5 py-2 font-semibold text-[#FFC400] hover:bg-[#FFC400] hover:text-black ${focusRing}`}
+          >
+            Ribbons ({ribbons.length})
+          </a>
+        </div>
+      </nav>
+
+      <section id="printers" className="mx-auto max-w-6xl scroll-mt-20 px-6 py-14 md:py-20">
         <h2 className="mb-8 text-2xl font-bold tracking-tight md:text-3xl">Printers and dispensers</h2>
         <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {products.map((p, i) => (
