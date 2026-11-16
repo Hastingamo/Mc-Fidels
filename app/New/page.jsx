@@ -1,14 +1,4 @@
-import React from 'react'
-
-function page() {
-  return (
-    <div>
-        <p>page</p>
-        <div>
-
-            </div>
-    </div>
-  )import Link from "next/link";
+import Link from "next/link";
 
 export const metadata = {
   title: "SEAORY S16 and S18 ID Card Printers | Mc-Fidel ID & Safety Technocrats Limited",
@@ -200,7 +190,3 @@ export default function SeaoryS16S18Page() {
     </main>
   );
 }
-
-}
-
-export default page
