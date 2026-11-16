@@ -85,6 +85,13 @@ export default function ServicesPage() {
             </p>
             <ContactActions subject="ID card enquiry" />
           </div>
+             <div className="rounded-2xl border border-[#D9DEE1] p-6 md:p-8">
+            <h2 className="text-2xl font-bold tracking-tight">Get your ribbons</h2>
+            <p className="mt-3 leading-relaxed text-[#4A5A66]">
+              get your colour ribbon to make your id card 
+            </p>
+            <ContactActions subject="ID card enquiry" />
+          </div>
         </div>
       </section>
 

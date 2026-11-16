@@ -35,34 +35,6 @@ const clients = [
 const focusRing =
   "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FFC400]";
 
-function IdCard() {
-  return (
-    <div
-      className="mx-auto w-full max-w-sm rotate-2 overflow-hidden rounded-2xl border border-[#2A2A2A] bg-[#161616] shadow-2xl shadow-black"
-      aria-hidden="true"
-    >
-      <div className="flex items-center justify-between bg-[#FFC400] px-5 py-3">
-        <span className="text-sm font-bold text-black">Mc-Fidel ID & Safety</span>
-        <span className="h-3 w-10 rounded-full bg-black/80" />
-      </div>
-      <div className="flex gap-4 p-5">
-        <div className="flex h-28 w-24 shrink-0 items-end justify-center overflow-hidden rounded-md bg-[#2A2A2A]">
-          <div className="h-16 w-16 translate-y-5 rounded-full bg-[#555555]" />
-        </div>
-        <div className="flex flex-1 flex-col justify-center gap-2">
-          <div className="h-3 w-3/4 rounded bg-white" />
-          <div className="h-3 w-1/2 rounded bg-[#555555]" />
-          <div className="h-3 w-2/3 rounded bg-[#555555]" />
-        </div>
-      </div>
-      <div className="flex items-center justify-between border-t border-[#2A2A2A] bg-[#0A0A0A] px-5 py-3 text-xs text-[#A3A3A3]">
-        <span>RC 837049</span>
-        <span>Since 2009</span>
-      </div>
-    </div>
-  );
-}
-
 export default function HomePage() {
   return (
     <main className="bg-[#0A0A0A] text-white">
@@ -92,7 +64,14 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
-          <IdCard />
+          <Image
+            src="/Images/mcfidel-logo.png"
+            alt="Mcfidel ID/Safety Technocrats Ltd logo"
+            width={730}
+            height={320}
+            priority
+            className="mx-auto h-auto w-full max-w-md rounded-2xl border border-[#2A2A2A] shadow-2xl shadow-black"
+          />
         </div>
       </section>
 

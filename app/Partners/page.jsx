@@ -6,8 +6,8 @@ export const metadata = {
 
 // Add or edit partners here.
 const partners = [
-  { name: "Evolis", location: "France", since: 2012},
-  { name: "Seaory Card", location: "", since: 2020  },
+  { name: "Evolis", location: "France", since: 2012, link: "https://www.evolis.com"},
+  { name: "Seaory Card", location: "", since: 2020,   },
 ];
 
 export default function PartnersPage() {
@@ -36,7 +36,16 @@ export default function PartnersPage() {
                 {p.location && <p className="mt-1 text-[#4A5A66]">{p.location}</p>}
                 <p className="mt-6 text-sm text-[#4A5A66]">Partners since</p>
                 <p className="text-lg font-semibold">{p.since}</p>
-        
+                {p.link && (
+                  <a
+                    href={p.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-block text-blue-500 hover:text-blue-700"
+                  >
+                    Visit Website
+                  </a>
+                )}
               </div>
             </li>
           ))}
