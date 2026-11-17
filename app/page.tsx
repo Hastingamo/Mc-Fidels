@@ -38,7 +38,7 @@ const focusRing =
 function IdCard() {
   return (
     <div
-      className="mx-auto w-full max-w-sm rotate-2 overflow-hidden rounded-2xl border border-[#2A2A2A] bg-[#161616] shadow-2xl shadow-black"
+      className="mx-auto w-full max-w-sm rotate-2 overflow-hidden rounded-2xl border border-[#2A2A2A] bg-white shadow-2xl shadow-black"
       aria-hidden="true"
     >
   <div className="flex items-center justify-between gap-3 bg-[#FFC400] px-5 py-3">
@@ -52,7 +52,7 @@ function IdCard() {
         {/* The photo fills this frame; object-top keeps the face in view */}
         <div className="relative h-28 w-24 shrink-0 overflow-hidden rounded-md bg-[#2A2A2A]">
           <Image
-            src="/Images/personal.jpg"
+            src="/Images/personalss.jpg"
             alt="Moses Hasting"
             fill
             sizes="96px"

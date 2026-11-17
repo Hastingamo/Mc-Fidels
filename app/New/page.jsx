@@ -161,18 +161,7 @@ export default function SeaoryS16S18Page() {
         </div>
       </section>
 
-      {/* Shared features */}
-      <section className="mx-auto max-w-6xl px-6 py-14 md:py-20">
-        <h2 className="text-2xl font-bold tracking-tight md:text-3xl">Features of both printers</h2>
-        <ul className="mt-8 grid gap-x-8 gap-y-4 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((f) => (
-            <li key={f} className="border-l-4 border-[#FFC400] pl-4 leading-snug">
-              {f}
-            </li>
-          ))}
-        </ul>
-      </section>
-
+      
       {/* CTA */}
       <section className="bg-[#FFC400] text-black">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-6 px-6 py-12">

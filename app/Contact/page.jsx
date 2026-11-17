@@ -12,7 +12,7 @@ export default function ContactPage() {
   return (
     <main className="bg-white text-[#10151C] md:p-2">
       <header className="bg-[#F2F4F5]">
-        <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
+        <div className="mx-auto max-w-6xl px-6 py-8 md:py-16">
           <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl">Contact us</h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#4A5A66]">
             Call or email us for quotes, product enquiries and technical support on ID card printers,

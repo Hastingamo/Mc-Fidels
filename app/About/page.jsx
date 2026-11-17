@@ -6,8 +6,10 @@ export const metadata = {
     "Nigerian supplier of ID card printers, identification systems, safety devices and technology solutions since 2009.",
 };
 
+const EMAIL = "mosesfidel@yahoo.com";
+
 const services = [
-  "ID card printers , card printing and line yard ",
+  "ID card printers, card printing and lanyards",
   "Identification cards and related accessories",
   "Security and safety devices",
   "Specialised technological equipment",
@@ -20,7 +22,7 @@ const team = [
   {
     name: "Moses-Ugoh Chiwueze",
     role: "Management Executive",
-    bio: "Previously worked with the Central Securities Clearing System (CSCS), the clearing and settlement institution for the Nigerian capital market. Brings insight into corporate operations, administration and institutional service delivery.",
+    bio: "An experienced management and information technology professional with extensive cognate experience in corporate administration and business operations. Possesses a strong professional background with the Central Securities Clearing System (CSCS) Limited, the technology subsidiary of The Nigerian Stock Exchange, where he actively participated in the implementation and execution of several turnkey projects, contributing to the delivery of technology-driven business solutions and operational efficiency.",
   },
   {
     name: "Wasiu Olayinka Oduyoye",
@@ -62,24 +64,35 @@ const reasons = [
   "Able to serve public and private sector clients",
 ];
 
+const officePhotos = [
+  { src: "/Images/office1.jpeg", alt: "Mc-Fidel office, front area" },
+  { src: "/Images/office2.jpeg", alt: "Mc-Fidel office, workspace" },
+];
+
+const initials = (name) =>
+  name
+    .split(/[\s-]+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((n) => n[0])
+    .join("")
+    .toUpperCase();
+
 function IdCard() {
   return (
-    <div
-      className="md:p-2 mx-auto w-full max-w-sm rotate-2 overflow-hidden rounded-2xl border border-[#D9DEE1] bg-white shadow-xl"
-      aria-hidden="true"
-    >
-  <div className="flex items-center justify-between gap-3 bg-[#FFC400] px-5 py-3">
+    <div className="mx-auto w-full max-w-sm overflow-hidden rounded-2xl border border-[#D9DEE1] bg-white shadow-xl md:rotate-2">
+      <div className="flex items-center justify-between gap-3 bg-[#FFC400] px-5 py-3">
         <span className="text-sm font-bold leading-tight text-black">
-          Mc-Fidel ID & Safety Technocrats Limited
+          Mc-Fidel ID &amp; Safety Technocrats Limited
         </span>
         <span aria-hidden="true" className="h-3 w-10 shrink-0 rounded-full bg-black/80" />
       </div>
 
       <div className="flex gap-4 p-5">
-        {/* The photo fills this frame; object-top keeps the face in view */}
-        <div className="relative h-28 w-24 shrink-0 overflow-hidden rounded-md bg-[#2A2A2A]">
+        {/* object-top keeps the face in view */}
+        <div className="relative h-28 w-24 shrink-0 overflow-hidden rounded-md bg-[#D9DEE1]">
           <Image
-            src="/Images/personal.jpg"
+            src="/Images/personalss.jpg"
             alt="Moses Hasting"
             fill
             sizes="96px"
@@ -89,23 +102,24 @@ function IdCard() {
         </div>
 
         <div className="flex flex-1 flex-col justify-center gap-1">
-          <p className="text-lg font-bold leading-tight text-white">Moses Hasting</p>
-          <p className="text-sm text-[#A3A3A3]">Software Developer</p>
-          <p className="text-sm text-[#A3A3A3]">Mc-Fidel</p>
+          <p className="text-lg font-bold leading-tight text-[#10151C]">Moses Hasting</p>
+          <p className="text-sm text-[#2B3640]">Software Developer</p>
+          <p className="text-sm text-[#4A5A66]">Mc-Fidel</p>
         </div>
       </div>
 
-      <div className="flex items-center justify-between border-t border-[#2A2A2A] bg-[#0A0A0A] px-5 py-3 text-xs text-[#A3A3A3]">
+      <div className="flex items-center justify-between bg-[#10151C] px-5 py-3 text-xs text-[#B8C2C9]">
         <span>RC 837049</span>
         <span>Incorporated 2009</span>
       </div>
-    </div>  );
+    </div>
+  );
 }
 
 function Section({ title, intro, children }) {
   return (
-    <section className="border-t border-[#D9DEE1] py-14 md:py-20">
-      <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-[1fr_2fr]">
+    <section className="border-t border-[#D9DEE1] py-12 md:py-20">
+      <div className="mx-auto grid max-w-6xl gap-8 px-6 md:grid-cols-[1fr_2fr] md:gap-10">
         <div>
           <h2 className="text-2xl font-bold tracking-tight text-[#10151C] md:text-3xl">{title}</h2>
           {intro && <p className="mt-3 max-w-xs leading-relaxed text-[#4A5A66]">{intro}</p>}
@@ -121,15 +135,15 @@ export default function AboutPage() {
     <main className="bg-white text-[#10151C]">
       {/* Hero */}
       <header className="bg-[#F2F4F5]">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-16 md:grid-cols-2 md:py-24">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 py-12 md:grid-cols-2 md:gap-12 md:py-24">
           <div>
-            <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl">
+            <h1 className="text-3xl font-bold leading-tight tracking-tight sm:text-4xl md:text-5xl">
               Identification, safety and technology solutions
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#4A5A66]">
-              Mc-Fidel ID & Safety Technocrats Limited is a Nigerian-owned company that supplies ID card
-              printers, identification systems, safety devices and specialised equipment to organisations
-              in oil and gas, financial services, education and other sectors.
+              Mc-Fidel ID &amp; Safety Technocrats Limited is a Nigerian-owned company that supplies ID
+              card printers, identification systems, safety devices and specialised equipment to
+              organisations in oil and gas, financial services, education and other sectors.
             </p>
             <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-4 text-sm">
               <div>
@@ -163,10 +177,29 @@ export default function AboutPage() {
         </div>
       </Section>
 
+      <Section title="Our office" intro="Where we plan, support and deliver.">
+        <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
+          {officePhotos.map((p) => (
+            <li
+              key={p.src}
+              className="relative aspect-[4/3] overflow-hidden rounded-xl border border-[#D9DEE1] bg-[#F2F4F5]"
+            >
+              <Image
+                src={p.src}
+                alt={p.alt}
+                fill
+                sizes="(min-width: 768px) 30vw, (min-width: 640px) 45vw, 100vw"
+                className="object-cover"
+              />
+            </li>
+          ))}
+        </ul>
+      </Section>
+
       <Section title="What we do">
         <ul className="grid gap-x-8 gap-y-4 sm:grid-cols-2">
           {services.map((item) => (
-            <li key={item} className="flex gap-3 border-l-4 border-[#FFC400] pl-4 leading-snug">
+            <li key={item} className="border-l-4 border-[#FFC400] pl-4 leading-snug">
               {item}
             </li>
           ))}
@@ -179,10 +212,18 @@ export default function AboutPage() {
       >
         <div className="divide-y divide-[#D9DEE1]">
           {team.map((person) => (
-            <article key={person.name} className="py-6 first:pt-0 last:pb-0">
-              <h3 className="text-xl font-semibold">{person.name}</h3>
-              <p className="text-sm font-medium text-[#4A5A66]">{person.role}</p>
-              <p className="mt-3 max-w-2xl leading-relaxed text-[#2B3640]">{person.bio}</p>
+            <article key={person.name} className="flex gap-4 py-6 first:pt-0 last:pb-0">
+              <div
+                aria-hidden="true"
+                className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#FFC400] text-sm font-bold text-black"
+              >
+                {initials(person.name)}
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold">{person.name}</h3>
+                <p className="text-sm font-medium text-[#4A5A66]">{person.role}</p>
+                <p className="mt-3 max-w-2xl leading-relaxed text-[#2B3640]">{person.bio}</p>
+              </div>
             </article>
           ))}
         </div>
@@ -208,19 +249,20 @@ export default function AboutPage() {
       </Section>
 
       <Section title="Vision and mission">
-        <div className="grid gap-8 sm:grid-cols-2">
-          <div>
+        <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
+          <div className="rounded-xl border-t-4 border-[#FFC400] bg-[#F2F4F5] p-5">
             <h3 className="text-lg font-semibold">Vision</h3>
             <p className="mt-2 leading-relaxed text-[#2B3640]">
               To be a leading and trusted provider of identification systems, safety equipment and
               technology-driven solutions in Nigeria and beyond.
             </p>
           </div>
-          <div>
+          <div className="rounded-xl border-t-4 border-[#FFC400] bg-[#F2F4F5] p-5">
             <h3 className="text-lg font-semibold">Mission</h3>
             <p className="mt-2 leading-relaxed text-[#2B3640]">
-              To provide quality products and reliable technology solutions that meet our clients'
-              operational needs, with professionalism, integrity, efficiency and good customer service.
+              To provide quality products and reliable technology solutions that meet our
+              clients&apos; operational needs, with professionalism, integrity, efficiency and good
+              customer service.
             </p>
           </div>
         </div>
@@ -249,18 +291,24 @@ export default function AboutPage() {
 
       {/* Closing */}
       <footer className="bg-[#10151C] text-white">
-        <div className="mx-auto max-w-6xl px-6 py-16">
+        <div className="mx-auto max-w-6xl px-6 py-14 md:py-16">
           <h2 className="max-w-2xl text-2xl font-bold md:text-3xl">
             Every organisation needs dependable products, efficient service and trusted partners.
           </h2>
           <p className="mt-4 max-w-2xl leading-relaxed text-[#B8C2C9]">
-            We want to serve more organisations, form strategic partnerships and contribute to the growth
-            of businesses and institutions in Nigeria.
+            We want to serve more organisations, form strategic partnerships and contribute to the
+            growth of businesses and institutions in Nigeria.
           </p>
+          <a
+            href={`mailto:${EMAIL}?subject=${encodeURIComponent("Enquiry from website")}`}
+            className="mt-8 inline-block rounded-md bg-[#FFC400] px-5 py-2.5 font-semibold text-black hover:bg-[#E6B000] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FFC400]"
+          >
+            Get in touch
+          </a>
           <dl className="mt-10 grid gap-6 border-t border-white/15 pt-8 text-sm sm:grid-cols-3">
             <div>
               <dt className="text-[#B8C2C9]">Company name</dt>
-              <dd className="mt-1 font-medium">Mc-Fidel ID & Safety Technocrats Limited</dd>
+              <dd className="mt-1 font-medium">Mc-Fidel ID &amp; Safety Technocrats Limited</dd>
             </div>
             <div>
               <dt className="text-[#B8C2C9]">Registration</dt>

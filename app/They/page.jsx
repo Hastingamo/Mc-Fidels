@@ -11,13 +11,19 @@ const PHONE_LINK = "+2348036210152";
 const EMAIL = "mosesfidel@yahoo.com";
 
 const services = [
-  "ID card printers and card printing systems",
-  "Identification cards and related accessories",
-  "Security and safety devices",
-  "Identification and access-control solutions",
-  "Specialised technological equipment",
-  "Office, industrial and electronic equipment",
-  "Technical support and related services",
+  "*Accredited distributor of Seaory Printers",
+  "*Total Identity Technology",
+  "*Embossing *Encoding *Biometrics",
+  "*Fulfilment - PVC cards personalization",
+  "*Sales/Lease/Hiring of ID card printers (for Events & Exhibitions)",
+  "*ID card Printer Support (Seaory Printers)",
+  "*ID printer Consumables",
+  "*Customised Lanyards",
+  "*Provision of PPEs",
+  "*Turnstile Access Control & Installation",
+  "*Access Control System",
+  "*Safety/Security Devices",
+  "*Accreditation Services"
 ];
 
 const focusRing =
@@ -46,7 +52,7 @@ export default function ServicesPage() {
   return (
     <main className="bg-white text-[#10151C]">
       <header className="bg-[#F2F4F5]">
-        <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
+        <div className="mx-auto max-w-6xl px-6 py-8 md:py-16">
           <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl">Our services</h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#4A5A66]">
             Everything you need to identify, secure and equip your organisation, from card printers to
@@ -57,7 +63,7 @@ export default function ServicesPage() {
 
       <section className="mx-auto max-w-6xl px-6 py-14 md:py-20">
         <h2 className="text-2xl font-bold tracking-tight md:text-3xl">What we offer</h2>
-        <ul className="mt-8 grid gap-x-8 gap-y-4 sm:grid-cols-2">
+        <ul className="mt-8 grid gap-x-8 gap-y-4 sm:grid-cols-2 xl:grid-cols-3">
           {services.map((item) => (
             <li key={item} className="border-l-4 border-[#FFC400] pl-4 leading-snug">
               {item}

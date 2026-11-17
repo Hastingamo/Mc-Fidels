@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const metadata = {
   title: "Partners | Mc-Fidel ID & Safety Technocrats Limited",
   description:
@@ -6,19 +8,26 @@ export const metadata = {
 
 // Add or edit partners here.
 const partners = [
-  { name: "Evolis", location: "France", since: 2012, link: "https://www.evolis.com"},
-  { name: "Seaory Card", location: "", since: 2020,   },
+  {
+    name: "Evolis",
+    location: "France",
+    since: 2012,
+    link: "https://www.evolis.com",
+  },
+  { name: "Seaory Card", location: "", since: 2020, page: "/Partners/Seoary" },
 ];
 
 export default function PartnersPage() {
   return (
     <main className="bg-white text-[#10151C] md:p-2">
       <header className="bg-[#F2F4F5]">
-        <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
-          <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl">Our partners</h1>
+        <div className="mx-auto max-w-6xl px-6 py-8 md:py-16">
+          <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl">
+            Our partners
+          </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#4A5A66]">
-            We work with trusted manufacturers and suppliers so our clients get dependable products and
-            support.
+            We work with trusted manufacturers and suppliers so our clients get
+            dependable products and support.
           </p>
         </div>
       </header>
@@ -33,7 +42,9 @@ export default function PartnersPage() {
               <div className="h-2 bg-[#FFC400]" />
               <div className="p-6">
                 <h2 className="text-2xl font-bold tracking-tight">{p.name}</h2>
-                {p.location && <p className="mt-1 text-[#4A5A66]">{p.location}</p>}
+                {p.location && (
+                  <p className="mt-1 text-[#4A5A66]">{p.location}</p>
+                )}
                 <p className="mt-6 text-sm text-[#4A5A66]">Partners since</p>
                 <p className="text-lg font-semibold">{p.since}</p>
                 {p.link && (
@@ -45,6 +56,14 @@ export default function PartnersPage() {
                   >
                     Visit Website
                   </a>
+                )}
+                {p.page && (
+                  <Link
+                    href={p.page}
+                    className="mt-4 mr-4 inline-block font-semibold text-[#10151C] underline hover:text-[#4A5A66]"
+                  >
+                    View more
+                  </Link>
                 )}
               </div>
             </li>
