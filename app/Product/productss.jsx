@@ -44,10 +44,50 @@ const items = [
     type: "Desktop erasable card printer",
     src: "/Images/seaory-s20r.jpg",
   },
+    {
+    name: "Seaory S20",
+    category: "Printers",
+    type: "Desktop single-sided",
+    src: "/Images/printers7.jpg",
+  },
+     {
+    name: "Seaory S21",
+    category: "Printers",
+        type: "	Desktop single-sided (USB and Ethernet)",
+    src: "/Images/printers8.jpg",
+  },
+     {
+    name: "Seaory S22",
+    category: "Printers",
+    type: "Desktop dual-sided",
+    src: "/Images/printers9.jpg",
+  },
+     {
+    name: "Seaory S25",
+    category: "Printers",
+    type: "	Single-sided, manual feed",
+    src: "/Images/printers10.jpg",
+  },
+     {
+    name: "Seaory S26",
+    category: "Printers",
+    type: "Single-sided, with card hoppers",
+    src: "/Images/printers11.jpg",
+  },
+    {
+    name: "Seaory S28",
+    category: "Printers",
+    type: "Desktop dual-sided, automatic",
+    src: "/Images/printers12.jpg",
+  },
+  
+
 
   // Ribbons: src, type, compatible (array) and prints are optional
-  { name: "Ribbon 1", category: "Ribbons" },
-  { name: "Ribbon 2", category: "Ribbons" },
+  { name: "full-colour ymcko", colourType: "yellow, magenta, cyan, black and overlay", discreption: "for full-colour id cards" },
+  { name: "half-panel ymcko", colourType: "none", discreption: "used for cards with colour photos and black text" },
+    { name: "half-panel ymcko", colourType: "Ribbons", discreption: "for black-only printing" },
+
 ];
 
 const categories = ["All", "Printers", "Ribbons"];

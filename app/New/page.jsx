@@ -163,7 +163,7 @@ export default function SeaoryS16S18Page() {
 
       
       {/* CTA */}
-      <section className="bg-[#FFC400] text-black">
+      <section className="bg-[#FFC400] text-black mt-6">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-6 px-6 py-12">
           <h2 className="max-w-xl text-2xl font-bold md:text-3xl">
             Not sure which printer fits your volume? Ask us.
