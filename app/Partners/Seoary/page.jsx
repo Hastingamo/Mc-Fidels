@@ -52,14 +52,18 @@ const photos = [
   },
 ];
 
+const focusRing =
+  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#10151C]";
+
 export default function GalleryPage() {
   return (
-    <main className="text-white">
-      <header className="bg-[#161616]">
-        <div className="mx-auto max-w-6xl px-6 py-8 md:py-16">
+    <main className="text-[#10151C]">
+      {/* pt-20 / md:pt-28 clears the top navbar. Change them to fit its height. */}
+      <header className="bg-[#F2F4F5]">
+        <div className="mx-auto max-w-6xl px-6 pb-8 pt-20 md:pb-16 md:pt-28">
           <Link
             href="/Partners"
-            className="text-sm font-semibold text-[#FFC400] hover:underline"
+            className={`text-sm font-semibold text-[#10151C] underline decoration-[#FFC400] decoration-2 underline-offset-4 hover:decoration-[#10151C] ${focusRing}`}
           >
             &larr; Back to partners
           </Link>
@@ -67,7 +71,7 @@ export default function GalleryPage() {
           <h1 className="mt-4 text-4xl font-bold leading-tight tracking-tight md:text-5xl">
             Seaory visits our office
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#A3A3A3]">
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#4A5560]">
             Our partners from Seaory Card came to see us at the Mc-Fidel office.
             They met the team, looked at the products we supply, and talked
             about working together to serve our clients.
@@ -80,21 +84,24 @@ export default function GalleryPage() {
           {photos.map((p, i) => (
             <li
               key={p.src}
-              className="overflow-hidden rounded-xl border border-[#2A2A2A] bg-[#161616]"
+              className="group overflow-hidden rounded-xl border border-[#D9DEE2] bg-white"
             >
-              <div className="relative aspect-square bg-[#2A2A2A]">
-                <Image
-                  src={p.src}
-                  alt={p.alt}
-                  fill
-                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
-                  className="object-cover"
-                  priority={i < 4}
-                />
-              </div>
-              <p className="border-t-2 border-[#FFC400] p-3 text-xs leading-snug text-[#A3A3A3] sm:text-sm">
-                {p.caption}
-              </p>
+              <figure>
+                {/* Portrait frame so faces and groups are not cropped */}
+                <div className="relative aspect-[3/4] overflow-hidden bg-[#F2F4F5]">
+                  <Image
+                    src={p.src}
+                    alt={p.alt}
+                    fill
+                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
+                    className="object-cover transition duration-500 group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                    priority={i < 4}
+                  />
+                </div>
+                <figcaption className="border-t-4 border-[#FFC400] p-3 text-xs leading-snug text-[#4A5560] sm:text-sm">
+                  {p.caption}
+                </figcaption>
+              </figure>
             </li>
           ))}
         </ul>

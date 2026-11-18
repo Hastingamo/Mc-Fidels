@@ -6,8 +6,10 @@ import Link from "next/link";
 
 const EMAIL = "mosesfidel@yahoo.com";
 
-// One list now. Each item gets a `category`.
+// Each item needs a `category` ("Printers" or "Ribbons") and a unique `name`.
+// Optional: type, src, features (array), size, weight, description, colours, panels, half.
 const items = [
+  // ---------- Printers ----------
   {
     name: "Seaory R600M",
     category: "Printers",
@@ -21,10 +23,18 @@ const items = [
     src: "/Images/seaory-r660.jpg",
   },
   {
-    name: "SEAORY R330",
+    name: "Seaory R330",
     category: "Printers",
     type: "Desktop dual-sided ID card printer",
-    src: "/Images/seaory-r330.jpg", // keep your features, size, weight
+    src: "/Images/seaory-r330.jpg",
+    features: [
+      "High-resolution dye-sublimation colour printing",
+      "Edge-to-edge printing across the entire card",
+      "Set the card input and output direction",
+      "Alarm for no card and defective card slot",
+    ],
+    size: "568 × 272 × 398 mm",
+    weight: "12 kg",
   },
   {
     name: "Seaory E30",
@@ -43,60 +53,123 @@ const items = [
     category: "Printers",
     type: "Desktop erasable card printer",
     src: "/Images/seaory-s20r.jpg",
+    features: [
+      "Compact and lightweight design",
+      "Direct thermal printing and erasing on rewritable material",
+      "Single-sided printing",
+      "Manual feeding",
+    ],
+    size: "244 × 160 × 208 mm (L × W × H)",
+    weight: "4.5 kg",
   },
-    {
+  {
     name: "Seaory S20",
     category: "Printers",
     type: "Desktop single-sided",
     src: "/Images/printers7.jpg",
   },
-     {
+  {
     name: "Seaory S21",
     category: "Printers",
-        type: "	Desktop single-sided (USB and Ethernet)",
+    type: "Desktop single-sided (USB and Ethernet)",
     src: "/Images/printers8.jpg",
   },
-     {
+  {
     name: "Seaory S22",
     category: "Printers",
     type: "Desktop dual-sided",
     src: "/Images/printers9.jpg",
   },
-     {
+  {
     name: "Seaory S25",
     category: "Printers",
-    type: "	Single-sided, manual feed",
+    type: "Single-sided, manual feed",
     src: "/Images/printers10.jpg",
   },
-     {
+  {
     name: "Seaory S26",
     category: "Printers",
     type: "Single-sided, with card hoppers",
     src: "/Images/printers11.jpg",
   },
-    {
+  {
     name: "Seaory S28",
     category: "Printers",
     type: "Desktop dual-sided, automatic",
     src: "/Images/printers12.jpg",
   },
-  
 
-
-  // Ribbons: src, type, compatible (array) and prints are optional
-  { name: "full-colour ymcko", colourType: "yellow, magenta, cyan, black and overlay", discreption: "for full-colour id cards" },
-  { name: "half-panel ymcko", colourType: "none", discreption: "used for cards with colour photos and black text" },
-    { name: "half-panel ymcko", colourType: "Ribbons", discreption: "for black-only printing" },
-
+  // ---------- Ribbons ----------
+  // No photo yet, so each ribbon shows its colour panels instead.
+  // panels: the panels in order. Y yellow, M magenta, C cyan, K black, O overlay.
+  // half: true draws the Y, M and C panels at half width.
+  {
+    name: "Full-colour YMCKO ribbon",
+    category: "Ribbons",
+    type: "Full-colour ribbon",
+    description: "For full-colour ID cards.",
+    colours: "Yellow, magenta, cyan, black, overlay",
+    panels: ["Y", "M", "C", "K", "O"],
+  },
+  {
+    name: "Half-panel YMCKO ribbon",
+    category: "Ribbons",
+    type: "Half-panel colour ribbon",
+    description: "For cards with colour photos and black text.",
+    colours: "Yellow, magenta, cyan (half), black, overlay",
+    panels: ["Y", "M", "C", "K", "O"],
+    half: true,
+  },
+  {
+    name: "Black monochrome ribbon",
+    category: "Ribbons",
+    type: "Single-colour ribbon",
+    description: "For black-only printing.",
+    colours: "Black",
+    panels: ["K"],
+  },
 ];
 
 const categories = ["All", "Printers", "Ribbons"];
 
+const PANEL_STYLE = {
+  Y: "bg-[#FFD400] text-black",
+  M: "bg-[#E6007E] text-white",
+  C: "bg-[#00A0DC] text-white",
+  K: "bg-[#10151C] text-white",
+  O: "border border-dashed border-[#4A5560] bg-white text-[#4A5560]",
+};
+
 const focusRing =
-  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FFC400]";
+  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#10151C]";
 
 const quoteHref = (name) =>
   `mailto:${EMAIL}?subject=${encodeURIComponent(`Quote request: ${name}`)}`;
+
+const countFor = (cat) =>
+  cat === "All" ? items.length : items.filter((i) => i.category === cat).length;
+
+function Swatch({ panels, half }) {
+  return (
+    <div
+      aria-hidden="true"
+      className="absolute inset-0 flex items-center justify-center bg-[#F2F4F5] p-4"
+    >
+      <div className="flex h-16 w-full max-w-[14rem] overflow-hidden rounded-md">
+        {panels.map((k) => (
+          <span
+            key={k}
+            className={`flex items-center justify-center text-xs font-bold ${
+              half && "YMC".includes(k) ? "flex-[0.5]" : "flex-1"
+            } ${PANEL_STYLE[k]}`}
+          >
+            {k}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function ProductCatalog() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -106,32 +179,24 @@ export default function ProductCatalog() {
       ? items
       : items.filter((item) => item.category === selectedCategory);
 
-  const countFor = (cat) =>
-    cat === "All"
-      ? items.length
-      : items.filter((i) => i.category === cat).length;
-
   return (
     <main className="text-[#10151C]">
+      {/* pt-20 / md:pt-28 clears the top navbar. Change them to fit its height. */}
       <header className="bg-[#F2F4F5]">
-        <div className="mx-auto max-w-6xl px-6 py-8 md:py-16">
+        <div className="mx-auto max-w-6xl px-6 pb-8 pt-20 md:pb-16 md:pt-28">
           <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl">
             Our products
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#A3A3A3]">
-            ID card printers, card dispensers and printer ribbons for
-            businesses, schools and institutions. Contact us for prices and
-            availability.
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#4A5560]">
+            ID card printers and printer ribbons for businesses, schools and
+            institutions. Contact us for prices and availability.
           </p>
         </div>
       </header>
 
       {/* Category buttons */}
-      <nav
-        aria-label="Product categories"
-        className="border-b border-[#2A2A2A]"
-      >
-        <div className="mx-auto flex max-w-6xl flex-wrap gap-3 px-6 py-5">
+      <nav aria-label="Product categories" className="border-b border-[#D9DEE2]">
+        <div className="mx-auto flex max-w-6xl flex-wrap gap-2 px-4 py-4 sm:gap-3 sm:px-6 sm:py-5">
           {categories.map((cat) => {
             const active = selectedCategory === cat;
             return (
@@ -140,10 +205,10 @@ export default function ProductCatalog() {
                 type="button"
                 aria-pressed={active}
                 onClick={() => setSelectedCategory(cat)}
-                className={`rounded-full border border-[#FFC400] px-5 py-2 font-semibold transition ${
+                className={`rounded-full border px-4 py-1.5 text-sm font-semibold transition sm:px-5 sm:py-2 sm:text-base ${
                   active
-                    ? "bg-[#FFC400] text-black"
-                    : "text-[#FFC400] hover:bg-[#FFC400] hover:text-black"
+                    ? "border-[#FFC400] bg-[#FFC400] text-black"
+                    : "border-[#10151C] text-[#10151C] hover:border-[#FFC400] hover:bg-[#FFC400]"
                 } ${focusRing}`}
               >
                 {cat} ({countFor(cat)})
@@ -154,46 +219,65 @@ export default function ProductCatalog() {
       </nav>
 
       <section className="mx-auto max-w-6xl px-4 py-8 sm:px-6 md:py-14">
-        <h2 className="mb-6 text-2xl font-bold tracking-tight md:text-3xl">
+        <h2
+          className="text-2xl font-bold tracking-tight md:text-3xl"
+          aria-live="polite"
+        >
           {selectedCategory === "All" ? "All products" : selectedCategory}
         </h2>
 
-        <ul className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4 xl:grid-cols-5">
+        {selectedCategory === "Ribbons" && (
+          <p className="mt-3 max-w-xl leading-relaxed text-[#4A5560]">
+            Tell us your printer model and we will supply the right ribbon.
+          </p>
+        )}
+
+        <ul className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
           {filtered.map((p, i) => (
             <li
               key={p.name}
-              className="flex flex-col overflow-hidden rounded-xl border border-[#2A2A2A] bg-[#161616]"
+              className="flex flex-col overflow-hidden rounded-xl border border-[#D9DEE2] bg-white"
             >
-              <div className="relative aspect-square bg-[#2A2A2A]">
+              <div className="relative aspect-square bg-white">
                 {p.src ? (
                   <Image
                     src={p.src}
                     alt={p.name}
                     fill
-                    sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
-                    className="object-cover"
-                    priority={i === 0}
+                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
+                    className="object-contain p-2"
+                    priority={i < 4}
                   />
+                ) : p.panels ? (
+                  <Swatch panels={p.panels} half={p.half} />
                 ) : (
-                  <div className="flex h-full items-center justify-center text-sm text-[#A3A3A3]">
+                  <div className="flex h-full items-center justify-center bg-[#F2F4F5] text-sm text-[#4A5560]">
                     Photo coming soon
                   </div>
                 )}
+                <span className="absolute left-2 top-2 rounded-full bg-[#10151C] px-2.5 py-0.5 text-xs font-semibold text-white">
+                  {p.category}
+                </span>
               </div>
 
-              <div className="flex flex-1 flex-col border-t-4 border-[#FFC400] p-3">
-                <h3 className="text-sm font-semibold sm:text-base">{p.name}</h3>
+              <div className="flex flex-1 flex-col border-t-4 border-[#FFC400] p-3 sm:p-4">
+                <h3 className="text-base font-semibold">{p.name}</h3>
                 {p.type && (
-                  <p className="mt-1 text-xs text-[#A3A3A3]">{p.type}</p>
+                  <p className="mt-1 text-xs text-[#4A5560] sm:text-sm">{p.type}</p>
+                )}
+                {p.description && (
+                  <p className="mt-2 text-xs leading-relaxed text-[#2B343D] sm:text-sm">
+                    {p.description}
+                  </p>
                 )}
 
                 {p.features && (
-                  <ul className="mt-3 space-y-2 text-xs leading-relaxed text-[#E5E5E5] sm:text-sm">
+                  <ul className="mt-3 space-y-1.5 text-xs leading-relaxed text-[#2B343D] sm:text-sm">
                     {p.features.map((f) => (
-                      <li key={f} className="flex gap-3">
+                      <li key={f} className="flex gap-2.5">
                         <span
                           aria-hidden="true"
-                          className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#FFC400]"
+                          className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#FFC400]"
                         />
                         <span>{f}</span>
                       </li>
@@ -201,32 +285,24 @@ export default function ProductCatalog() {
                   </ul>
                 )}
 
-                {(p.size || p.weight || p.compatible || p.prints) && (
-                  <dl className="mt-4 divide-y divide-[#2A2A2A] border-t border-[#2A2A2A] text-xs sm:text-sm">
+                {(p.size || p.weight || p.colours) && (
+                  <dl className="mt-4 divide-y divide-[#D9DEE2] border-t border-[#D9DEE2] text-xs sm:text-sm">
                     {p.size && (
                       <div className="flex justify-between gap-4 py-2">
-                        <dt className="text-[#A3A3A3]">Size</dt>
+                        <dt className="text-[#4A5560]">Size</dt>
                         <dd className="text-right font-medium">{p.size}</dd>
                       </div>
                     )}
                     {p.weight && (
                       <div className="flex justify-between gap-4 py-2">
-                        <dt className="text-[#A3A3A3]">Weight</dt>
+                        <dt className="text-[#4A5560]">Weight</dt>
                         <dd className="font-medium">{p.weight}</dd>
                       </div>
                     )}
-                    {p.compatible && (
+                    {p.colours && (
                       <div className="flex justify-between gap-4 py-2">
-                        <dt className="text-[#A3A3A3]">Fits</dt>
-                        <dd className="text-right font-medium">
-                          {p.compatible.join(", ")}
-                        </dd>
-                      </div>
-                    )}
-                    {p.prints && (
-                      <div className="flex justify-between gap-4 py-2">
-                        <dt className="text-[#A3A3A3]">Yield</dt>
-                        <dd className="font-medium">{p.prints}</dd>
+                        <dt className="text-[#4A5560]">Colours</dt>
+                        <dd className="text-right font-medium">{p.colours}</dd>
                       </div>
                     )}
                   </dl>
@@ -242,7 +318,7 @@ export default function ProductCatalog() {
                   {p.category !== "Ribbons" && (
                     <Link
                       href="/Product/Warranty"
-                      className={`inline-block rounded-md border border-[#FFC400] px-3 py-1.5 text-xs font-semibold text-[#FFC400] hover:bg-[#0A0A0A] sm:text-sm ${focusRing}`}
+                      className={`inline-block rounded-md border border-[#10151C] px-3 py-1.5 text-xs font-semibold text-[#10151C] hover:bg-[#F2F4F5] sm:text-sm ${focusRing}`}
                     >
                       Warranty
                     </Link>

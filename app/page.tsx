@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { MotionRoot, Rise, HeroCard, Group, Item } from "./component/animation";
+import { MotionRoot, Rise, HeroCard, Group, Item } from "./Component/animation";
 
 export const metadata = {
   title: "Mc-Fidel ID & Safety Technocrats Limited | ID cards, printers and safety equipment",
