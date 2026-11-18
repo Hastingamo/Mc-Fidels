@@ -24,7 +24,7 @@ export default function WarrantyPage() {
   return (
     <main className="text-white">
       <header className="bg-[#161616]">
-        <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
+        <div className="mx-auto max-w-6xl px-6 py-8 md:py-16">
           <Link
             href="/Product"
             className={`text-sm font-medium text-[#FFC400] underline underline-offset-4 ${focusRing}`}
