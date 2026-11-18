@@ -27,14 +27,7 @@ const items = [
     category: "Printers",
     type: "Desktop dual-sided ID card printer",
     src: "/Images/seaory-r330.jpg",
-    features: [
-      "High-resolution dye-sublimation colour printing",
-      "Edge-to-edge printing across the entire card",
-      "Set the card input and output direction",
-      "Alarm for no card and defective card slot",
-    ],
-    size: "568 × 272 × 398 mm",
-    weight: "12 kg",
+
   },
   {
     name: "Seaory E30",
@@ -53,14 +46,6 @@ const items = [
     category: "Printers",
     type: "Desktop erasable card printer",
     src: "/Images/seaory-s20r.jpg",
-    features: [
-      "Compact and lightweight design",
-      "Direct thermal printing and erasing on rewritable material",
-      "Single-sided printing",
-      "Manual feeding",
-    ],
-    size: "244 × 160 × 208 mm (L × W × H)",
-    weight: "4.5 kg",
   },
   {
     name: "Seaory S20",
@@ -183,8 +168,7 @@ export default function ProductCatalog() {
     <main className="text-[#10151C]">
       {/* pt-20 / md:pt-28 clears the top navbar. Change them to fit its height. */}
       <header className="bg-[#F2F4F5]">
-        <div className="mx-auto max-w-6xl px-6 pb-8 pt-20 md:pb-16 md:pt-28">
-          <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl">
+<div className="mx-auto max-w-6xl px-6 pb-8 pt-28 md:pb-16 md:pt-40">          <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl">
             Our products
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#4A5560]">

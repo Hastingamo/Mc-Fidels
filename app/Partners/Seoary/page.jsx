@@ -60,8 +60,7 @@ export default function GalleryPage() {
     <main className="text-[#10151C]">
       {/* pt-20 / md:pt-28 clears the top navbar. Change them to fit its height. */}
       <header className="bg-[#F2F4F5]">
-        <div className="mx-auto max-w-6xl px-6 pb-8 pt-20 md:pb-16 md:pt-28">
-          <Link
+<div className="mx-auto max-w-6xl px-6 pb-8 pt-28 md:pb-16 md:pt-40">          <Link
             href="/Partners"
             className={`text-sm font-semibold text-[#10151C] underline decoration-[#FFC400] decoration-2 underline-offset-4 hover:decoration-[#10151C] ${focusRing}`}
           >
