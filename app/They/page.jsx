@@ -23,7 +23,12 @@ const services = [
   "*Turnstile Access Control & Installation",
   "*Access Control System",
   "*Safety/Security Devices",
-  "*Accreditation Services"
+  "*Accreditation Services",
+  "* Printer troubleshooting and technical assistance",
+  "* Maintenance and servicing",
+  "* Repairs and replacement of faulty parts",
+  "* Installation and setup",
+  "* User guidance and operational support"
 ];
 
 const focusRing =
@@ -55,8 +60,7 @@ export default function ServicesPage() {
         <div className="mx-auto max-w-6xl px-6 py-8 md:py-16">
           <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl">Our services</h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#4A5A66]">
-            Everything you need to identify, secure and equip your organisation, from card printers to
-            technical support.
+            We provide support to every branch where our printers are deployed, both within Lagos and outside Lagos.
           </p>
         </div>
       </header>

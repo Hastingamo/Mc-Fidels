@@ -66,7 +66,7 @@ function IdCard() {
         </div>
 
         <div className="flex flex-1 flex-col justify-center gap-1">
-          <p className="text-lg font-bold leading-tight text-[#10151C]">Moses Hasting</p>
+          <p className="text-lg font-bold leading-tight text-[#10151C]">Moses Hastings</p>
           <p className="text-sm text-[#4A5560]">Software Developer</p>
           <p className="text-sm text-[#4A5560]">Mc-Fidel</p>
         </div>

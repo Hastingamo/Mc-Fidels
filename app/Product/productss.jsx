@@ -168,7 +168,8 @@ export default function ProductCatalog() {
     <main className="text-[#10151C]">
       {/* pt-20 / md:pt-28 clears the top navbar. Change them to fit its height. */}
       <header className="bg-[#F2F4F5]">
-<div className="mx-auto max-w-6xl px-6 pb-8 pt-28 md:pb-16 md:pt-40">          <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl">
+        <div className="mx-auto max-w-6xl px-6 py-8 md:py-16">
+          <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl">
             Our products
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#4A5560]">
@@ -179,7 +180,7 @@ export default function ProductCatalog() {
       </header>
 
       {/* Category buttons */}
-      <nav aria-label="Product categories" className="border-b border-[#D9DEE2]">
+      <nav aria-label="Product categories" mt-4 className="border-b border-[#D9DEE2]">
         <div className="mx-auto flex max-w-6xl flex-wrap gap-2 px-4 py-4 sm:gap-3 sm:px-6 sm:py-5">
           {categories.map((cat) => {
             const active = selectedCategory === cat;
@@ -292,7 +293,7 @@ export default function ProductCatalog() {
                   </dl>
                 )}
 
-                <div className="mt-auto flex flex-wrap gap-2 pt-4">
+                <div className="mt-auto flex flex-wrap gap-2 pt-4 mb-4">
                   <a
                     href={quoteHref(p.name)}
                     className={`inline-block rounded-md bg-[#FFC400] px-3 py-1.5 text-xs font-semibold text-black hover:bg-[#E6B000] sm:text-sm ${focusRing}`}

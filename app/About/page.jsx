@@ -43,7 +43,12 @@ const clients = [
   "Niger Delta Petroleum Development Company (NDPDC)",
   "First Exploration & Petroleum Development Company",
   "Ahmadu Bello University, Zaria",
-  "Tai Solarin Federal University of Education",
+  "Nigerian Breweries plc",
+  "Mobil Oil Producing plc", 
+  "Agip & Elf Oil Company ",
+  "Diamonshield HMO",
+  "Abbey Bank",
+  "Omniswift Nigeria Ltd",
 ];
 
 const values = [
@@ -102,7 +107,7 @@ function IdCard() {
         </div>
 
         <div className="flex flex-1 flex-col justify-center gap-1">
-          <p className="text-lg font-bold leading-tight text-[#10151C]">Moses Hasting</p>
+          <p className="text-lg font-bold leading-tight text-[#10151C]">Moses Hastings</p>
           <p className="text-sm text-[#2B3640]">Software Developer</p>
           <p className="text-sm text-[#4A5A66]">Mc-Fidel</p>
         </div>

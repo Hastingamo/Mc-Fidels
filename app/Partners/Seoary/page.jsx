@@ -60,7 +60,8 @@ export default function GalleryPage() {
     <main className="text-[#10151C]">
       {/* pt-20 / md:pt-28 clears the top navbar. Change them to fit its height. */}
       <header className="bg-[#F2F4F5]">
-<div className="mx-auto max-w-6xl px-6 pb-8 pt-28 md:pb-16 md:pt-40">          <Link
+        <div className="mx-auto max-w-6xl px-6 py-8 md:py-16">
+         <Link
             href="/Partners"
             className={`text-sm font-semibold text-[#10151C] underline decoration-[#FFC400] decoration-2 underline-offset-4 hover:decoration-[#10151C] ${focusRing}`}
           >
@@ -97,7 +98,7 @@ export default function GalleryPage() {
                     priority={i < 4}
                   />
                 </div>
-                <figcaption className="border-t-4 border-[#FFC400] p-3 text-xs leading-snug text-[#4A5560] sm:text-sm">
+                <figcaption className="border-t-4 mb-4 border-[#FFC400] p-3 text-xs leading-snug text-[#4A5560] sm:text-sm">
                   {p.caption}
                 </figcaption>
               </figure>
