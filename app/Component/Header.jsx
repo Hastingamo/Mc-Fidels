@@ -38,16 +38,20 @@ function Header() {
           onClick={() => setOpen(false)}
           className="flex items-center gap-2 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FFC400]"
         >
-  
+           <span
+            aria-hidden="true"
+            className="flex items-start justify-start overflow-hidden  "
+          >
                 <Image
             src="/Images/mcfidel-logo.png"
             alt="Mcfidel ID/Safety Technocrats Ltd logo"
-            width={30}
-            height={20}
+            width={80}
+          height={70}
             priority
             className="mx-auto h-auto w-full max-w-md rounded-2xl border border-[#2A2A2A] shadow-2xl shadow-black"
           />
-          <span className="text-lg font-bold tracking-tight text-white">Mc-Fidel</span>
+          </span>
+          <span className="text-lg font-bold tracking-tight text-white"></span>
         </Link>
 
         {/* Desktop */}

@@ -3,24 +3,57 @@ import Link from "next/link";
 import { MotionRoot, Rise, HeroCard, Group, Item } from "./Component/animation";
 
 export const metadata = {
-  title: "Mc-Fidel ID & Safety Technocrats Limited | ID cards, printers and safety equipment",
+  title:
+    "Mc-Fidel ID & Safety Technocrats Limited | ID cards, printers and safety equipment",
   description:
     "Nigerian supplier of ID card printers, identification cards, safety devices and access-control solutions since 2009.",
 };
 
 const services = [
-  { title: "ID card printers", text: "Card printing systems for organisations of any size." },
-  { title: "Identification cards", text: "Cards and accessories for staff, students and members." },
-  { title: "Safety devices", text: "Security and safety equipment for workplaces." },
-  { title: "Access control", text: "Identification and access-control solutions." },
-  { title: "Technical support", text: "Help with setup, use and upkeep of your equipment." },
-  { title: "Other equipment", text: "Specialised, office, industrial and electronic equipment." },
+  {
+    title: "ID card printers",
+    text: "Card printing systems for organisations of any size.",
+  },
+  {
+    title: "Identification cards",
+    text: "Cards and accessories for staff, students and members.",
+  },
+  {
+    title: "Safety devices",
+    text: "Security and safety equipment for workplaces.",
+  },
+  {
+    title: "Access control",
+    text: "Identification and access-control solutions.",
+  },
+  {
+    title: "Technical support",
+    text: "Help with setup, use and upkeep of your equipment.",
+  },
+  {
+    title: "Other equipment",
+    text: "Specialised, office, industrial and electronic equipment.",
+  },
 ];
 
 const featured = [
-  { name: "Desktop Rewrite Card Printer", type: "Rewritable card printer", src: "/Images/printer 1.jpg" },
-  { name: "SEAORY R330", type: "Desktop dual-sided ID card printer", src: "/Images/printer 5.jpg" },
-  { name: "SEAORY E80E", type: "Portable card dispenser", src: "/Images/printer 9.jpg" },
+  {
+    name: "Seaory S22K",
+    category: "Printers",
+    type: "Embedded duplex card printer",
+    src: "/Images/seaory-s22k.jpg",
+  },
+  {
+    name: "SEAORY R330",
+    type: "Desktop dual-sided ID card printer",
+    src: "/Images/seaory-r330.jpg",
+  },
+  {
+    name: "Seaory E30",
+    category: "Printers",
+    type: "Single-sided ID card printer",
+    src: "/Images/seaory-e30.jpg",
+  },
 ];
 
 const clients = [
@@ -49,7 +82,10 @@ function IdCard() {
         <span className="text-sm font-bold leading-tight text-black">
           Mc-Fidel ID & Safety Technocrats Limited
         </span>
-        <span aria-hidden="true" className="h-3 w-10 shrink-0 rounded-full bg-black/80" />
+        <span
+          aria-hidden="true"
+          className="h-3 w-10 shrink-0 rounded-full bg-black/80"
+        />
       </div>
 
       <div className="flex gap-4 p-5">
@@ -66,7 +102,9 @@ function IdCard() {
         </div>
 
         <div className="flex flex-1 flex-col justify-center gap-1">
-          <p className="text-lg font-bold leading-tight text-[#10151C]">Moses Hastings</p>
+          <p className="text-lg font-bold leading-tight text-[#10151C]">
+            Moses Hastings
+          </p>
           <p className="text-sm text-[#4A5560]">Software Developer</p>
           <p className="text-sm text-[#4A5560]">Mc-Fidel</p>
         </div>
@@ -90,13 +128,14 @@ export default function HomePage() {
             <div>
               <Rise>
                 <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-6xl">
-                  ID cards, printers and safety equipment for Nigerian organisations
+                  ID cards, printers and safety equipment for Nigerian
+                  organisations
                 </h1>
               </Rise>
               <Rise delay={0.12}>
                 <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#4A5560]">
-                  We have supplied banks, oil and gas companies and universities since 2009. Tell us
-                  what you need and we will help you choose.
+                  We have supplied banks, oil and gas companies and universities
+                  since 2009. Tell us what you need and we will help you choose.
                 </p>
               </Rise>
               <Rise delay={0.24}>
@@ -125,14 +164,19 @@ export default function HomePage() {
         {/* Services */}
         <section className="mx-auto max-w-6xl px-6 py-14 md:py-20">
           <div className="flex flex-wrap items-end justify-between gap-4">
-            <h2 className="text-2xl font-bold tracking-tight md:text-3xl">What we supply</h2>
+            <h2 className="text-2xl font-bold tracking-tight md:text-3xl">
+              What we supply
+            </h2>
             <Link href="/Services" className={`${textLink} ${focusRing}`}>
               See all services
             </Link>
           </div>
           <Group className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((s) => (
-              <Item key={s.title} className="border-l-4 border-[#FFC400] bg-[#F2F4F5] p-5">
+              <Item
+                key={s.title}
+                className="border-l-4 border-[#FFC400] bg-[#F2F4F5] p-5"
+              >
                 <h3 className="text-lg font-semibold">{s.title}</h3>
                 <p className="mt-2 leading-relaxed text-[#4A5560]">{s.text}</p>
               </Item>
@@ -179,7 +223,9 @@ export default function HomePage() {
         {/* Clients */}
         <section className="border-t border-[#D9DEE2] bg-[#F2F4F5]">
           <div className="mx-auto max-w-6xl px-6 py-14 md:py-20">
-            <h2 className="text-2xl font-bold tracking-tight md:text-3xl">Trusted by</h2>
+            <h2 className="text-2xl font-bold tracking-tight md:text-3xl">
+              Trusted by
+            </h2>
             <Group className="mt-8 grid gap-x-8 gap-y-3 text-[#2B343D] sm:grid-cols-2">
               {clients.map((c) => (
                 <Item key={c} className="border-b border-[#D9DEE2] pb-3">
