@@ -1,12 +1,14 @@
+import ContactForm from "../Component/ContactForrm";
+
 export const metadata = {
   title: "Contact | Mc-Fidel ID & Safety Technocrats Limited",
   description:
     "Get in touch with Mc-Fidel ID & Safety Technocrats Limited for ID card printers, identification systems and safety equipment.",
 };
 
-const PHONE_DISPLAY = "+234 803 621 0152";
-const PHONE_LINK = "+2348036210152";
-const EMAIL = "mosesfidel@yahoo.com";
+// const PHONE_DISPLAY = "+234 803 621 0152";
+// const PHONE_LINK = "+2348036210152";
+// const EMAIL = "mosesfidel@yahoo.com";
 
 export default function ContactPage() {
   return (
@@ -22,7 +24,7 @@ export default function ContactPage() {
       </header>
 
       <section className="mx-auto grid max-w-6xl gap-12 px-6 py-14 md:grid-cols-2 md:py-20">
-        <div>
+        {/* <div>
           <h2 className="text-2xl font-bold tracking-tight">Contact person</h2>
           <p className="mt-4 text-xl font-semibold">Moses-Ugoh Chiwueze</p>
           <p className="text-sm font-medium text-[#4A5A66]">Management Executive</p>
@@ -51,7 +53,8 @@ export default function ContactPage() {
               </dd>
             </div>
           </dl>
-        </div>
+        </div> */}
+      <ContactForm />
 
         <div className="self-start rounded-2xl border border-[#D9DEE1] bg-[#F2F4F5] p-6">
           <h2 className="text-lg font-semibold">Company registration</h2>
@@ -75,6 +78,8 @@ export default function ContactPage() {
           </dl>
         </div>
       </section>
+      {/* <section className="mx-auto max-w-6xl px-6 py-14 md:py-20">
+      </section> */}
     </main>
   );
 }

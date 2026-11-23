@@ -10,8 +10,8 @@ const links = [
   { href: "/Product", label: "Product" },
   { href: "/Partners", label: "Partners" },
   { href: "/Contact", label: "Contact" },
-  { href: "/They", label: "services"},
-  { href: "/New", label: "New"},
+  { href: "/They", label: "Services"},
+  { href: "/New", label: "Technical Specifications"},
 ];
 
 function Header() {

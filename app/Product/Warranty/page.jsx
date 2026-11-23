@@ -11,10 +11,16 @@ const PHONE_LINK = "+2348036210152";
 const EMAIL = "mosesfidel@yahoo.com";
 
 const support = [
-  "Installation and configuration of the printers",
-  "Troubleshooting and resolution of technical issues",
-  "User guidance and operational assistance",
-  "Maintenance and other printer-related technical support",
+  "* Printer troubleshooting and technical assistance",
+
+"* Maintenance and servicing",
+
+"* Repairs and replacement of faulty parts",
+
+"* Installation and setup",
+
+"* User guidance and operational support",
+
 ];
 
 const focusRing =
@@ -55,16 +61,16 @@ export default function WarrantyPage() {
       <section className="border-t border-[#2A2A2A]">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 md:grid-cols-[1fr_2fr] md:py-20">
           <div>
-            <h2 className="text-2xl font-bold tracking-tight md:text-3xl">Technical support</h2>
-            <p className="mt-3 max-w-xs leading-relaxed text-[#A3A3A3]">
+            <h2 className="text-2xl font-bold text-black md:text-3xl">Technical support</h2>
+            <p className="mt-3 max-w-xs leading-relaxed text-black">
               We support every branch where our printers are deployed, in Lagos and outside Lagos.
             </p>
           </div>
           <div>
-            <p className="text-[#A3A3A3]">Our support covers:</p>
+            <p className="text-black">Our support covers:</p>
             <ul className="mt-4 grid gap-4 sm:grid-cols-2">
               {support.map((item) => (
-                <li key={item} className="border-l-4 border-[#FFC400] pl-4 leading-snug">
+                <li key={item} className="border-l-4 border-[#FFC400] pl-4 leading-snug text-black">
                   {item}
                 </li>
               ))}
@@ -78,12 +84,12 @@ export default function WarrantyPage() {
           <h2 className="text-2xl font-bold tracking-tight md:text-3xl">Service charges</h2>
           <p className="max-w-2xl text-lg leading-relaxed text-[#E5E5E5]">
             Technical support and on-site service visits attract applicable service charges. We will
-            communicate the charges and agree them with you as required.
+            communica te the charges and agree them with you as required.
           </p>
         </div>
       </section>
 
-      <section className="bg-[#FFC400] text-black">
+      <section className="bg-[#FFC400] text-black mt-12 ">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-6 px-6 py-12">
           <h2 className="max-w-xl text-2xl font-bold md:text-3xl">Need help with your printer?</h2>
           <div className="flex flex-wrap gap-3">

@@ -44,7 +44,8 @@ const featured = [
     src: "/Images/seaory-s22k.jpg",
   },
   {
-    name: "SEAORY R330",
+    name: "Seaory R330",
+    category: "Printers",
     type: "Desktop dual-sided ID card printer",
     src: "/Images/seaory-r330.jpg",
   },
@@ -93,7 +94,7 @@ function IdCard() {
         <div className="relative h-28 w-24 shrink-0 overflow-hidden rounded-md bg-[#D9DEE2]">
           <Image
             src="/Images/personalss.jpg"
-            alt="Moses Hasting"
+            alt="Moses Hastings"
             fill
             sizes="96px"
             priority
@@ -135,7 +136,7 @@ export default function HomePage() {
               <Rise delay={0.12}>
                 <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#4A5560]">
                   We have supplied banks, oil and gas companies and universities
-                  since 2009. Tell us what you need and we will help you choose.
+                  since 2009.
                 </p>
               </Rise>
               <Rise delay={0.24}>
@@ -161,27 +162,61 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Services */}
+        {/* About */}
         <section className="mx-auto max-w-6xl px-6 py-14 md:py-20">
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <h2 className="text-2xl font-bold tracking-tight md:text-3xl">
-              What we supply
+          <div className="grid gap-8 md:grid-cols-3 md:gap-12">
+            <h2 className="text-2xl font-bold leading-tight tracking-tight md:text-3xl">
+              Trusted ID card printing solutions since 2009
             </h2>
-            <Link href="/Services" className={`${textLink} ${focusRing}`}>
-              See all services
-            </Link>
+
+            <div className="space-y-5 leading-relaxed text-[#4A5560] md:col-span-2">
+              <p className="text-lg text-[#10151C]">
+                Since 2009, we have supplied ID card printers and identification
+                solutions to banks, oil &amp; gas companies, HMOs, government
+                institutions, universities and many private-sector
+                organisations.
+              </p>
+              <p>
+                With years of industry experience, we understand the importance
+                of reliable equipment, quality printing and choosing the right
+                solution for your organisation. Whether you need an ID card
+                printer for staff identification, student cards, credit cards,
+                financial cards, membership cards, access control or other
+                identification purposes, we are here to help.
+              </p>
+              <p className="border-l-4 border-[#FFC400] pl-4 font-medium text-[#10151C]">
+                Tell us what you need, and we will help you choose the right ID
+                card printing solution.
+              </p>
+            </div>
           </div>
-          <Group className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((s) => (
-              <Item
-                key={s.title}
-                className="border-l-4 border-[#FFC400] bg-[#F2F4F5] p-5"
-              >
-                <h3 className="text-lg font-semibold">{s.title}</h3>
-                <p className="mt-2 leading-relaxed text-[#4A5560]">{s.text}</p>
-              </Item>
-            ))}
-          </Group>
+        </section>
+
+        {/* Services */}
+        <section className="border-t border-[#D9DEE2]">
+          <div className="mx-auto max-w-6xl px-6 py-14 md:py-20">
+            <div className="flex flex-wrap items-end justify-between gap-4">
+              <h2 className="text-2xl font-bold tracking-tight md:text-3xl">
+                What we supply
+              </h2>
+              <Link href="/Services" className={`${textLink} ${focusRing}`}>
+                See all services
+              </Link>
+            </div>
+            <Group className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {services.map((s) => (
+                <Item
+                  key={s.title}
+                  className="border-l-4 border-[#FFC400] bg-[#F2F4F5] p-5"
+                >
+                  <h3 className="text-lg font-semibold">{s.title}</h3>
+                  <p className="mt-2 leading-relaxed text-[#4A5560]">
+                    {s.text}
+                  </p>
+                </Item>
+              ))}
+            </Group>
+          </div>
         </section>
 
         {/* Featured products */}
