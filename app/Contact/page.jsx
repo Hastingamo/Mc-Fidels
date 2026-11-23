@@ -6,9 +6,7 @@ export const metadata = {
     "Get in touch with Mc-Fidel ID & Safety Technocrats Limited for ID card printers, identification systems and safety equipment.",
 };
 
-// const PHONE_DISPLAY = "+234 803 621 0152";
-// const PHONE_LINK = "+2348036210152";
-// const EMAIL = "mosesfidel@yahoo.com";
+
 
 export default function ContactPage() {
   return (
@@ -24,36 +22,7 @@ export default function ContactPage() {
       </header>
 
       <section className="mx-auto grid max-w-6xl gap-12 px-6 py-14 md:grid-cols-2 md:py-20">
-        {/* <div>
-          <h2 className="text-2xl font-bold tracking-tight">Contact person</h2>
-          <p className="mt-4 text-xl font-semibold">Moses-Ugoh Chiwueze</p>
-          <p className="text-sm font-medium text-[#4A5A66]">Management Executive</p>
-
-          <dl className="mt-8 space-y-6">
-            <div className="border-l-4 border-[#FFC400] pl-4">
-              <dt className="text-sm text-[#4A5A66]">Phone</dt>
-              <dd>
-                <a
-                  href={`tel:${PHONE_LINK}`}
-                  className="text-lg font-medium underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#10151C]"
-                >
-                  {PHONE_DISPLAY}
-                </a>
-              </dd>
-            </div>
-            <div className="border-l-4 border-[#FFC400] pl-4">
-              <dt className="text-sm text-[#4A5A66]">Email</dt>
-              <dd>
-                <a
-                  href={`mailto:${EMAIL}`}
-                  className="break-all text-lg font-medium underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#10151C]"
-                >
-                  {EMAIL}
-                </a>
-              </dd>
-            </div>
-          </dl>
-        </div> */}
+     
       <ContactForm />
 
         <div className="self-start rounded-2xl border border-[#D9DEE1] bg-[#F2F4F5] p-6">
