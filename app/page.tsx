@@ -64,7 +64,6 @@ const clients = [
   "Niger Delta Petroleum Development Company",
   "First Exploration & Petroleum Development Company",
   "Ahmadu Bello University, Zaria",
-  "Tai Solarin Federal University of Education",
 ];
 
 const focusRing =
